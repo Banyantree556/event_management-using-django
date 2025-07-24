@@ -1,0 +1,44 @@
+
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# SQLite database
+*.sqlite3
+
+# Virtual environment
+env/
+venv/
+ENV/
+*.env
+
+# Django static and media files
+staticfiles/
+media/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs and other generated files
+*.log
+
+# Migrations (optional to ignore)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Test coverage and test tools
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Translation files
+*.mo
+*.pot
