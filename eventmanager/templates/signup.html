@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load form_tags %}
+
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="container signup-container" style="max-width: 600px; margin-top: 50px; background-color: #EFE4D2; padding: 30px; border-radius: 10px;">
+    <h2 class="text-center" style="color: #131D4F;">Create an Account</h2>
+
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>There were errors in your submission:</strong>
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="id_username">Username</label>
+            {{ form.username|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_email">Email</label>
+            {{ form.email|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_mobile">Mobile Number</label>
+            {{ form.mobile|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_place">Place</label>
+            {{ form.place|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_pin">PIN Code</label>
+            {{ form.pin|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_password1">Password</label>
+            {{ form.password1|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_password2">Confirm Password</label>
+            {{ form.password2|add_class:"form-control" }}
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn" style="background-color: #954C2E; color: white; padding: 10px 30px; border-radius: 5px;">Sign Up</button>
+        </div>
+    </form>
+
+    <p class="text-center mt-3" style="margin-top: 15px;">
+        Already have an account? <a href="{% url 'login' %}" style="color: #254D70;">Login here</a>
+    </p>
+</div>
+{% endblock %}

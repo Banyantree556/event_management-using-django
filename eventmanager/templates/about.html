@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Star Events{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">About Star Events</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img src="{% static 'images/logo_event.png' %}" alt="About Star Events" class="img-fluid rounded shadow" height="100%" width="100%">
+        </div>
+        <div class="col-md-6">
+            <h4>Who We Are</h4>
+            <p>Star Events is a premier event management company based in Kerala, dedicated to turning your special moments into unforgettable memories. Whether it’s a wedding, corporate event, concert, or birthday, we take care of every detail with creativity and precision.</p>
+
+            <h4>Our Mission</h4>
+            <p>To deliver seamless and stylish events with a personal touch — every time. We focus on excellence, passion, and innovation to exceed client expectations.</p>
+
+            <h4>Why Choose Us?</h4>
+            <ul>
+                <li>Experienced and creative team</li>
+                <li>Customized event planning</li>
+                <li>Strong vendor network and reliable service</li>
+                <li>100+ successful events organized</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

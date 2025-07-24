@@ -1,0 +1,83 @@
+/* General */
+body {
+    background-color: #EFE4D2;
+    font-family: 'Segoe UI', sans-serif;
+    color: #131D4F;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #131D4F;
+    border: none;
+}
+.navbar-brand,
+.navbar-nav li a {
+    color: #EFE4D2 !important;
+    font-weight: bold;
+}
+.navbar-nav li a:hover {
+    color: #954C2E !important;
+}
+
+/* Events Page */
+.event-card {
+    background-color: white;
+    border: 2px solid #254D70;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+.event-card:hover {
+    transform: scale(1.02);
+}
+.event-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.event-title {
+    color: #131D4F;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Booking Form */
+.booking-form {
+    background-color: white;
+    border: 2px solid #254D70;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+.booking-form h2 {
+    color: #131D4F;
+    margin-bottom: 25px;
+}
+.booking-form label {
+    color: #131D4F;
+    font-weight: 500;
+}
+.booking-form input,
+.booking-form select {
+    border: 1px solid #254D70;
+    border-radius: 6px;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.booking-form button {
+    background-color: #954C2E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.booking-form button:hover {
+    background-color: #131D4F;
+}

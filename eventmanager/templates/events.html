@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events - Star Events{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-5">Our Events</h2>
+    <div class="row">
+        {% for event in eve %}
+        <div class="col-md-4 mb-4 d-flex align-items-stretch">
+            <div class="card event-card">
+                <img src="{{ event.img.url }}" class="card-img-top" alt="{{ event.name }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ event.name }}</h4>
+                    <p class="card-text">{{ event.desc }}</p>
+                </div>
+                    <a href="{% url 'booking' %}?event={{ event.id }}" class="btn btn-success btn-sm mt-3">Book Now</a>
+
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

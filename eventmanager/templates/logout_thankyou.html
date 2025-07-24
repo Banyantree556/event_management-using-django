@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Goodbye{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top: 80px;">
+    <h2 style="color: #2C3E50;">Thank you for visiting Star Events!</h2>
+    <p style="font-size: 18px; color: #555;">We hope to see you again soon.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-3" style="margin-top: 20px;">Back to Home</a>
+</div>
+{% endblock %}

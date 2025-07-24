@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Bootstrap CDN if you still want it -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-fixed-top transparent-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'index' %}">
+    <img src="{% static 'images/logo_event.png' %}" alt="Star Events" height="40">
+</a>
+</div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+
+      <li><a href="{% url 'events' %}">Events</a></li>
+      <li><a href="{% url 'booking' %}">Booking</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<li>
+  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" class="logout-btn">
+      <span class="glyphicon glyphicon-log-out"></span> Logout
+    </button>
+  </form>
+</li>
+
+    </ul>
+  </div>
+</nav>
+
+        {% block content %}
+        {% endblock %}
+        <!-- Required JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<br>
+<footer class="footer text-white">
+  <div class="container py-4">
+    <div class="row text-center text-md-left">
+      
+      <!-- Business Info -->
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase">Star Events</h5>
+        <p>We create, coordinate, and deliver extraordinary event experiences.</p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase">Contact</h5>
+        <p><i class="glyphicon glyphicon-earphone"></i> +91 98765 43210</p>
+        <p><i class="glyphicon glyphicon-envelope"></i> info@starevents.com</p>
+        <p><i class="glyphicon glyphicon-map-marker"></i> Kochi, Kerala, India</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase">Follow Us</h5>
+        <a href="#" class="text-white d-block mb-1">Facebook</a>
+        <a href="#" class="text-white d-block mb-1">Instagram</a>
+        <a href="#" class="text-white d-block">Twitter</a>
+      </div>
+
+    </div>
+    <hr class="bg-light">
+    <p class="text-center mb-0">&copy; 2025 Star Events. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Star Events{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Star Events</h1>
+    <p>We bring your dream events to life — from elegant weddings to vibrant corporate functions, trust us to manage everything seamlessly.</p>
+    <a href="{% url 'events' %}" class="btn btn-primary">Book Now</a>
+</div>
+{% endblock %}
